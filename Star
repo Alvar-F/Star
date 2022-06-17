@@ -1,0 +1,32 @@
+import sys 
+para=int(sys.argv[1])
+star =[]
+
+#### cas 1 ####
+
+if para == 1:
+    star.append(" "*(para*3)+"*")
+    star.append("*"*3+" "+"*"*3)
+    star.append(" "+"*"+" "*3+"*")
+    star.append("*"*3+" "+"*"*3)
+    star.append(" "*(para*3)+"*")
+    for p in star:
+        print(p)
+
+#### cas > 1 ####
+
+else :
+    star.append(" "*(5+(para-2)*3)+"*")
+    for i in list(range(para-1)):
+        star.append((4+3*(para-2)-i)*" "+"*"+(1+2*i)*" "+"*")
+    star.append("*"*(para*2+1)+" "*((para-2)*2+1)+"*"*(para*2+1))
+
+    for i in list(range(para-1)):
+        star.append(" "*(i+1)+"*"+(1+(para-1)*6-i*2)*" "+"*")
+    star.append(" "*para+"*"+" "*((para-1)*4+1)+"*")
+
+    for y in list(range(len(star))):
+            print(star[y])
+
+    for y in list(range(len(star)-2,-1,-1)):
+        print(star[y])
